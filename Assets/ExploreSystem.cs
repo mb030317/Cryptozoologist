@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class ExploreSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject mainMenu;
+    public GameObject exploreMenu;
 
-    // Update is called once per frame
-    void Update()
+    public void explorePress()
     {
-        
+        mainMenu.SetActive(false);
+        exploreMenu.SetActive(true);
     }
 }

@@ -6,6 +6,7 @@ public class TravelSystem : MonoBehaviour
 {
     public string[] locations;
     public string startingLocation;
+    public string nextLocation;
 
     // Start is called before the first frame update
     void Start()

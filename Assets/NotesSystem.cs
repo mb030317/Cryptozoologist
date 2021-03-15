@@ -8,6 +8,7 @@ public class NotesSystem : MonoBehaviour
     public GameObject mainScreen;
     public GameObject noteScreen;
     public GameObject gameText;
+    public GameObject map;
 
     public GameSystem thisGameSystem;
 
@@ -32,6 +33,7 @@ public class NotesSystem : MonoBehaviour
         noteScreen.SetActive(true);
         mainScreen.SetActive(false);
         gameText.SetActive(false);
+        map.SetActive(false);
     }
 
     public void backPress()
@@ -39,6 +41,7 @@ public class NotesSystem : MonoBehaviour
         noteScreen.SetActive(false);
         mainScreen.SetActive(true);
         gameText.SetActive(true);
+        map.SetActive(true);
 
         thisGameSystem.resetMainText();
     }

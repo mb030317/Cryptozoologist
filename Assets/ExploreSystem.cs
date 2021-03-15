@@ -8,13 +8,13 @@ public class ExploreSystem : MonoBehaviour
     public TextMeshProUGUI gameText;
     public GameObject mainMenu;
     public GameObject exploreMenu;
+    public GameObject map;
 
     public GameSystem thisGameSystem;
     public CryptidManager thisCryptidManager;
 
     public string[] thisCryptid; //this variable holds the data for this rounds cryptid
 
-    [SerializeField]
     int randomDialogue; //this int is used to assign random dialogues later in the script
 
     private void Start()
@@ -42,6 +42,7 @@ public class ExploreSystem : MonoBehaviour
     public void explorePress()
     {
         mainMenu.SetActive(false);
+        map.SetActive(false);
         exploreMenu.SetActive(true);
 
         gameText.text = "Where would you like to ask around first?";
@@ -50,6 +51,7 @@ public class ExploreSystem : MonoBehaviour
     public void backPress()
     {
         exploreMenu.SetActive(false);
+        map.SetActive(true);
         mainMenu.SetActive(true);
 
         thisGameSystem.resetMainText();

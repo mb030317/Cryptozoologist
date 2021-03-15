@@ -1476,7 +1476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 369551673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 901081950}
+        m_TargetAssemblyTypeName: ExploreSystem, Assembly-CSharp
+        m_MethodName: chPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &369551673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,7 +1688,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 525189786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 901081950}
+        m_TargetAssemblyTypeName: ExploreSystem, Assembly-CSharp
+        m_MethodName: barPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &525189786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,19 +2467,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mothman:
   - Mothman
-  - Wings
-  - Fuzzy
-  - People
+  - wings
+  - fuzzy
+  - people
   bigfoot:
   - Bigfoot
-  - Legs
-  - Furry
-  - Animals
+  - legs
+  - furry
+  - animals
   nessie:
   - Nessie
-  - Swimming
-  - Rubbery
-  - Nobody
+  - fins
+  - rubbery
+  - nobody
   cryptid:
   - Mothman
   - Bigfoot
@@ -2483,6 +2507,7 @@ MonoBehaviour:
   nextLocation: 
   mainScreen: {fileID: 1134508866}
   travelScreen: {fileID: 1762152116}
+  thisGameSystem: {fileID: 0}
 --- !u!114 &901081950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2495,8 +2520,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf456c63209b10f4b85c380526e23e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameText: {fileID: 237590454}
   mainMenu: {fileID: 1134508866}
   exploreMenu: {fileID: 180571196}
+  thisGameSystem: {fileID: 0}
+  thisCryptidManager: {fileID: 0}
+  thisCryptid: []
 --- !u!114 &901081951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,6 +2540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScreen: {fileID: 1134508866}
   noteScreen: {fileID: 1800214640}
+  thisGameSystem: {fileID: 0}
 --- !u!114 &901081952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,6 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameText: {fileID: 237590454}
   startingLocation: 
+  mainScreenText: 
 --- !u!4 &901081953
 Transform:
   m_ObjectHideFlags: 0
@@ -3283,7 +3314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265538486}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 901081950}
+        m_TargetAssemblyTypeName: ExploreSystem, Assembly-CSharp
+        m_MethodName: libraryPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1265538486
 MonoBehaviour:
   m_ObjectHideFlags: 0

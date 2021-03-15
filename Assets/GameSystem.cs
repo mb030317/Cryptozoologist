@@ -11,6 +11,8 @@ public class GameSystem : MonoBehaviour
 
     TravelSystem thisTravelSystem;
 
+    public string mainScreenText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,12 @@ public class GameSystem : MonoBehaviour
         startingLocation = thisTravelSystem.startingLocation;
 
         gameText.text = "There has been a cryptid sighting in " + startingLocation + "! Ask around to track the creature down!";
+        mainScreenText = "There has been a cryptid sighting in " + startingLocation + "! Ask around to track the creature down!";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void resetMainText() //this function is used to reset the main screen text whenever we return
     {
-
+        gameText.text = mainScreenText;
     }
+
 }

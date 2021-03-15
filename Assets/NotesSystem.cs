@@ -7,6 +7,13 @@ public class NotesSystem : MonoBehaviour
     public GameObject mainScreen;
     public GameObject noteScreen;
 
+    public GameSystem thisGameSystem;
+
+    void Start()
+    {
+        thisGameSystem = GetComponent<GameSystem>();
+    }
+
     public void notePress()
     {
         noteScreen.SetActive(true);
@@ -17,5 +24,7 @@ public class NotesSystem : MonoBehaviour
     {
         noteScreen.SetActive(false);
         mainScreen.SetActive(true);
+
+        thisGameSystem.resetMainText();
     }
 }

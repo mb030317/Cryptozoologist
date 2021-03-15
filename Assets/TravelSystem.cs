@@ -12,10 +12,13 @@ public class TravelSystem : MonoBehaviour
     public GameObject mainScreen;
     public GameObject travelScreen;
 
+    public GameSystem thisGameSystem;
+
 
     void Start()
     {
-        startingLocation = locations[Random.Range(0, 5)]; //picks a random location to start in        
+        startingLocation = locations[Random.Range(0, 5)]; //picks a random location to start in
+        thisGameSystem = GetComponent<GameSystem>();
     }
 
     public void travelPress() //switches to travel screen
@@ -28,6 +31,7 @@ public class TravelSystem : MonoBehaviour
     {
         travelScreen.SetActive(false);
         mainScreen.SetActive(true);
+        thisGameSystem.resetMainText();
     }
 
 

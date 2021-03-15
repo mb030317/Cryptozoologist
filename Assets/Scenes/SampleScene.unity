@@ -1169,7 +1169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 295375167}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 901081949}
+        m_TargetAssemblyTypeName: TravelSystem, Assembly-CSharp
+        m_MethodName: locationOnePress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &295375167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,6 +2932,7 @@ MonoBehaviour:
   - {fileID: 70650734}
   - {fileID: 1776168802}
   thisGameSystem: {fileID: 0}
+  thisExploreSystem: {fileID: 0}
   locationText: {fileID: 24372976}
   gameText: {fileID: 237590454}
   buttonText:
@@ -2943,7 +2956,11 @@ MonoBehaviour:
   map: {fileID: 144279527}
   thisGameSystem: {fileID: 0}
   thisCryptidManager: {fileID: 0}
+  thisTravelSystem: {fileID: 0}
   thisCryptid: []
+  visitedLibrary: 0
+  visitedBar: 0
+  visitedCH: 0
 --- !u!114 &901081951
 MonoBehaviour:
   m_ObjectHideFlags: 0

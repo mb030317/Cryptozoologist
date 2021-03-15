@@ -18,6 +18,7 @@ public class TravelSystem : MonoBehaviour
     public GameObject[] dot; //0 columbus, 1 athens, 2 cleveland, 3 cincinnati, 4 dayton
 
     public GameSystem thisGameSystem;
+    public ExploreSystem thisExploreSystem;
 
     public TextMeshProUGUI locationText;
     public TextMeshProUGUI gameText;
@@ -27,8 +28,10 @@ public class TravelSystem : MonoBehaviour
     void Start()
     {
         startingLocation = locations[Random.Range(0, 5)]; //picks a random location to start in
+
         thisGameSystem = GetComponent<GameSystem>();
-        locationText.text = startingLocation + ", Ohio";
+        thisExploreSystem = GetComponent<ExploreSystem>();
+
         currentLocation = startingLocation;
 
         switch (currentLocation)
@@ -64,6 +67,8 @@ public class TravelSystem : MonoBehaviour
         {
             bonusLocation = locations[Random.Range(0, 5)];
         }
+
+        locationText.text = currentLocation + ", Ohio";
 
         buttonText[0].text = nextLocation;
         buttonText[1].text = bonusLocation;
@@ -165,6 +170,46 @@ public class TravelSystem : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void locationOnePress()
+    {
+        currentLocation = nextLocation;
+        thisExploreSystem.resetExplore();
+
+        //clear the location dots
+        dot[0].SetActive(false);
+        dot[1].SetActive(false);
+        dot[2].SetActive(false);
+        dot[3].SetActive(false);
+        dot[4].SetActive(false);
+
+        switch (currentLocation) //turns on the current location dot
+        {
+            case "Columbus":
+                dot[0].SetActive(true);
+                break;
+            case "Athens":
+                dot[1].SetActive(true);
+                break;
+            case "Cleveland":
+                dot[2].SetActive(true);
+                break;
+            case "Cincinnati":
+                dot[3].SetActive(true);
+                break;
+            case "Dayton":
+                dot[4].SetActive(true);
+                break;
+            default:
+                break;
+        }
+
+        thisGameSystem.mainScreenText = "Welcome to " + currentLocation + "! Ask around for more information about the creature!";
+
+        travelScreen.SetActive(false);
+        mainScreen.SetActive(true);
+        thisGameSystem.resetMainText();
     }
 
 

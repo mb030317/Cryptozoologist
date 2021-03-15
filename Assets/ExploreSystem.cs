@@ -14,6 +14,7 @@ public class ExploreSystem : MonoBehaviour
 
     public string[] thisCryptid; //this variable holds the data for this rounds cryptid
 
+    [SerializeField]
     int randomDialogue; //this int is used to assign random dialogues later in the script
 
     private void Start()

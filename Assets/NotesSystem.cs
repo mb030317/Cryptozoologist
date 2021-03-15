@@ -15,6 +15,7 @@ public class NotesSystem : MonoBehaviour
     public TextMeshProUGUI movementText;
     public TextMeshProUGUI looksText;
     public TextMeshProUGUI attackingText;
+    public TextMeshProUGUI cryptidText;
 
     //these are used to put in the correct notes
     int movementInt;
@@ -134,5 +135,34 @@ public class NotesSystem : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void submit() //checks the combination of ints and displays what cryptid it is
+    {
+        if(movementInt == 0 || looksInt == 0 || attackingInt == 0)
+        {
+            cryptidText.text = "Cryptid: Not enough information";
+        }
+
+        else if(movementInt == 1 && looksInt == 1 && attackingInt == 1)
+        {
+            cryptidText.text = "Cryptid: The Mothman";
+        }
+
+        else if(movementInt == 2 && looksInt == 2 && attackingInt == 2)
+        {
+            cryptidText.text = "Cryptid: Bigfoot";
+        }
+
+        else if(movementInt == 3 && looksInt == 3 && attackingInt == 3)
+        {
+            cryptidText.text = "Cryptid: Nessie";
+        }
+
+        else
+        {
+            cryptidText.text = "Cryptid: Results inconclusive";
+        }
+
     }
 }

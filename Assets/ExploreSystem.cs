@@ -12,6 +12,7 @@ public class ExploreSystem : MonoBehaviour
 
     public GameSystem thisGameSystem;
     public CryptidManager thisCryptidManager;
+    public TravelSystem thisTravelSystem;
 
     public string[] thisCryptid; //this variable holds the data for this rounds cryptid
 
@@ -21,6 +22,7 @@ public class ExploreSystem : MonoBehaviour
     {
         thisGameSystem = GetComponent<GameSystem>();
         thisCryptidManager = GetComponent<CryptidManager>();
+        thisTravelSystem = GetComponent<TravelSystem>();
 
         switch (thisCryptidManager.thisCryptid) //assigns thisCryptid to this rounds cryptid
         {
@@ -64,22 +66,22 @@ public class ExploreSystem : MonoBehaviour
         switch (randomDialogue)
         {
             case 0:
-                gameText.text = "Yeah I saw something! It was big and had " + thisCryptid[2] + " skin!";
+                gameText.text = "Yeah I saw something come through here, it went towards " + thisTravelSystem.nextLocation + ".";
                 break;
             case 1:
-                gameText.text = "This huge thing came through here, it looked super " + thisCryptid[2] + ".";
+                gameText.text = "You just missed it! It left town headed for " + thisTravelSystem.nextLocation + ".";
                 break;
             case 2:
-                gameText.text = "This huge thing came through here, it was using its " + thisCryptid[1] + " to get around.";
+                gameText.text = "It was definitely here but not anymore... I think it went towards " + thisTravelSystem.nextLocation + "."; 
                 break;
             case 3:
-                gameText.text = "I saw this big creature getting around with its " + thisCryptid[1] + ".";
+                gameText.text = "Man I've never seen something go that fast. It left towards " + thisTravelSystem.nextLocation + ".";
                 break;
             case 4:
-                gameText.text = "This giant monster came through here and attacked " + thisCryptid[3] + "!";
+                gameText.text = "You better hurry! Last I saw it was going towards " + thisTravelSystem.nextLocation + "!";
                 break;
             case 5:
-                gameText.text = "Yeah I saw this weird creature attacking " + thisCryptid[3] + " the other day.";
+                gameText.text = "You better be careful, it left town a minute ago headed for " + thisTravelSystem.nextLocation + ".";
                 break;
             default:
                 break;

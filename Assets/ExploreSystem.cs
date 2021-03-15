@@ -12,4 +12,10 @@ public class ExploreSystem : MonoBehaviour
         mainMenu.SetActive(false);
         exploreMenu.SetActive(true);
     }
+
+    public void backPress()
+    {
+        exploreMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
 }

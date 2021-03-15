@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class NotesSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject mainScreen;
+    public GameObject noteScreen;
+
+    public void notePress()
     {
-        
+        noteScreen.SetActive(true);
+        mainScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void backPress()
     {
-        
+        noteScreen.SetActive(false);
+        mainScreen.SetActive(true);
     }
 }

@@ -8,16 +8,27 @@ public class TravelSystem : MonoBehaviour
     public string startingLocation;
     public string nextLocation;
 
-    // Start is called before the first frame update
+    //grabs the main and travel screens
+    public GameObject mainScreen;
+    public GameObject travelScreen;
+
+
     void Start()
     {
-        startingLocation = locations[Random.Range(0, 5)];
-        
+        startingLocation = locations[Random.Range(0, 5)]; //picks a random location to start in        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void travelPress() //switches to travel screen
     {
-        
+        travelScreen.SetActive(true);
+        mainScreen.SetActive(false);
     }
+
+    public void backPress() //switches back to main screen
+    {
+        travelScreen.SetActive(false);
+        mainScreen.SetActive(true);
+    }
+
+
 }

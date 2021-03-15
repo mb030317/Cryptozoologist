@@ -212,5 +212,10 @@ public class TravelSystem : MonoBehaviour
         thisGameSystem.resetMainText();
     }
 
+    public void locationTwoPress()
+    {
+
+    }
+
 
 }

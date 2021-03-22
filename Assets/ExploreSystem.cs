@@ -71,6 +71,8 @@ public class ExploreSystem : MonoBehaviour
     {
         randomDialogue = Random.Range(0, 6);
 
+        thisGameSystem.spendMoney(5); //spends $5
+
         if(visitedLibrary == false)
         {
             switch (randomDialogue) //assigns library dialogue for this round
@@ -106,7 +108,9 @@ public class ExploreSystem : MonoBehaviour
     {
         randomDialogue = Random.Range(0, 6);
 
-        if(visitedBar == false)
+        thisGameSystem.spendMoney(5); //spends $5
+
+        if (visitedBar == false)
         {
             switch (randomDialogue) //assigns bar dialogue for this round
             {
@@ -141,7 +145,9 @@ public class ExploreSystem : MonoBehaviour
     {
         randomDialogue = Random.Range(0, 6);
 
-        if(visitedCH == false)
+        thisGameSystem.spendMoney(5); //spends $5
+
+        if (visitedCH == false)
         {
             switch (randomDialogue)
             {

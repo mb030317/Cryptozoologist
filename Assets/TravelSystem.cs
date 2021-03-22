@@ -199,7 +199,8 @@ public class TravelSystem : MonoBehaviour
     {
         buttonLocation = 0; //this will randomize the travel button locations again
         currentLocation = nextLocation;
-        thisGameSystem.correctTravels++;
+        thisGameSystem.correctTravels++; //increases the correctTravels int on the GameSystem script
+        thisGameSystem.spendMoney(15); //spends $15 on traveling
         thisExploreSystem.resetExplore();
 
         //clear the location dots

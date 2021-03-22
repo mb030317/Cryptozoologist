@@ -11,6 +11,7 @@ public class NotesSystem : MonoBehaviour
     public GameObject map;
 
     public GameSystem thisGameSystem;
+    public CryptidManager thisCryptidManager;
 
     //grabs the various text objects on the note screen
     public TextMeshProUGUI movementText;
@@ -22,11 +23,6 @@ public class NotesSystem : MonoBehaviour
     int movementInt;
     int looksInt;
     int attackingInt;
-
-    void Start()
-    {
-        thisGameSystem = GetComponent<GameSystem>();
-    }
 
     public void notePress()
     {
@@ -145,26 +141,58 @@ public class NotesSystem : MonoBehaviour
         if(movementInt == 0 || looksInt == 0 || attackingInt == 0)
         {
             cryptidText.text = "Cryptid: Not enough information";
+            thisGameSystem.discoveredCryptid = false;
         }
 
         else if(movementInt == 1 && looksInt == 1 && attackingInt == 1)
         {
             cryptidText.text = "Cryptid: The Mothman";
+
+            if (thisCryptidManager.thisCryptid == "Mothman") //checks to see if the cryptid in the notes is the correct cryptid
+            {
+                thisGameSystem.discoveredCryptid = true;
+            }
+
+            else
+            {
+                thisGameSystem.discoveredCryptid = false;
+            }
         }
 
         else if(movementInt == 2 && looksInt == 2 && attackingInt == 2)
         {
             cryptidText.text = "Cryptid: Bigfoot";
+
+            if (thisCryptidManager.thisCryptid == "Bigfoot")
+            {
+                thisGameSystem.discoveredCryptid = true;
+            }
+
+            else
+            {
+                thisGameSystem.discoveredCryptid = false;
+            }
         }
 
         else if(movementInt == 3 && looksInt == 3 && attackingInt == 3)
         {
             cryptidText.text = "Cryptid: Nessie";
+
+            if(thisCryptidManager.thisCryptid == "Nessie")
+            {
+                thisGameSystem.discoveredCryptid = true;
+            }
+
+            else
+            {
+                thisGameSystem.discoveredCryptid = false;
+            }
         }
 
         else
         {
             cryptidText.text = "Cryptid: Results inconclusive";
+            thisGameSystem.discoveredCryptid = false;
         }
 
     }

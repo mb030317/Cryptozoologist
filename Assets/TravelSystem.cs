@@ -30,10 +30,13 @@ public class TravelSystem : MonoBehaviour
 
     int buttonLocation = 0;
 
+    public bool correctLocation; //checks to see if the player has visited the correct location
+
 
     void Start()
     {
         startingLocation = locations[Random.Range(0, 5)]; //picks a random location to start in
+        correctLocation = true; //starts as true because you start in the correct location
 
         thisGameSystem = GetComponent<GameSystem>();
         thisExploreSystem = GetComponent<ExploreSystem>();
@@ -198,6 +201,7 @@ public class TravelSystem : MonoBehaviour
     public void locationOnePress()
     {
         buttonLocation = 0; //this will randomize the travel button locations again
+        correctLocation = true; //picked the right location
         currentLocation = nextLocation;
         thisGameSystem.correctTravels++; //increases the correctTravels int on the GameSystem script
         thisGameSystem.spendMoney(10); //spends $10 on traveling
@@ -240,7 +244,45 @@ public class TravelSystem : MonoBehaviour
 
     public void locationTwoPress()
     {
+        buttonLocation = 0; //this will randomize the travel button locations again
+        correctLocation = false; //picked the wrong location
+        currentLocation = bonusLocation;
+        thisGameSystem.spendMoney(10); //spends $10 on traveling
+        thisExploreSystem.resetExplore();
 
+        //clear the location dots
+        dot[0].SetActive(false);
+        dot[1].SetActive(false);
+        dot[2].SetActive(false);
+        dot[3].SetActive(false);
+        dot[4].SetActive(false);
+
+        switch (currentLocation) //turns on the current location dot
+        {
+            case "Columbus":
+                dot[0].SetActive(true);
+                break;
+            case "Athens":
+                dot[1].SetActive(true);
+                break;
+            case "Cleveland":
+                dot[2].SetActive(true);
+                break;
+            case "Cincinnati":
+                dot[3].SetActive(true);
+                break;
+            case "Dayton":
+                dot[4].SetActive(true);
+                break;
+            default:
+                break;
+        }
+
+        thisGameSystem.mainScreenText = "Welcome to " + currentLocation + "! Things seem quiet here, did you take a wrong turn?";
+
+        travelScreen.SetActive(false);
+        mainScreen.SetActive(true);
+        thisGameSystem.resetMainText();
     }
 
 

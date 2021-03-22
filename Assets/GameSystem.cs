@@ -32,7 +32,7 @@ public class GameSystem : MonoBehaviour
     {
         thisTravelSystem = GetComponent<TravelSystem>();
 
-        money = 100;
+        money = 125;
 
         startingLocation = thisTravelSystem.startingLocation;
 

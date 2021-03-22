@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSystem : MonoBehaviour
 {
@@ -82,6 +83,16 @@ public class GameSystem : MonoBehaviour
         }
 
         loseMenu.SetActive(true); //turn on the lose menu
+    }
+
+    public void restartGame() //restarts the scene
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void quitGame() //quits the game
+    {
+        Application.Quit();
     }
 
 }

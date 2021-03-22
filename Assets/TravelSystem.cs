@@ -6,23 +6,29 @@ using UnityEngine.UI;
 
 public class TravelSystem : MonoBehaviour
 {
+    //location strings
     public string[] locations; //0 columbus, 1 athens, 2 cleveland, 3 cincinnati, 4 dayton
     public string startingLocation;
     public string currentLocation;
     public string nextLocation;
     public string bonusLocation;
 
-    //grabs the main and travel screens
+    //grabs the main and travel screens and the travel buttons
     public GameObject mainScreen;
     public GameObject travelScreen;
     public GameObject[] dot; //0 columbus, 1 athens, 2 cleveland, 3 cincinnati, 4 dayton
+    public RectTransform[] buttonObjects; //0 button1, 1 button2
 
+    //other script components
     public GameSystem thisGameSystem;
     public ExploreSystem thisExploreSystem;
 
+    //text objects
     public TextMeshProUGUI locationText;
     public TextMeshProUGUI gameText;
     public Text[] buttonText; //0 button1, 1 button2
+
+    int buttonLocation = 0;
 
 
     void Start()
@@ -70,6 +76,11 @@ public class TravelSystem : MonoBehaviour
 
         locationText.text = currentLocation + ", Ohio";
 
+        if(buttonLocation == 0) //randomly assigns the buttonLocation int on reset
+        {
+            buttonLocation = Random.Range(1, 3);
+        }
+
         buttonText[0].text = nextLocation;
         buttonText[1].text = bonusLocation;
     }
@@ -79,6 +90,18 @@ public class TravelSystem : MonoBehaviour
         travelScreen.SetActive(true);
         mainScreen.SetActive(false);
         gameText.text = "Where would you like to go next?";
+
+        if(buttonLocation == 1) //randomizes correct button location
+        {
+            buttonObjects[0].anchoredPosition = new Vector2(-172.35f, -191.1f);
+            buttonObjects[1].anchoredPosition = new Vector2(139.6f, -181.5f);
+        }
+
+        else
+        {
+            buttonObjects[0].anchoredPosition = new Vector2(139.6f, -181.5f);
+            buttonObjects[1].anchoredPosition = new Vector2(-172.35f, -191.1f);
+        }
 
         switch (nextLocation) //turns on nextlocation dot when entering travel scene
         {
@@ -174,7 +197,9 @@ public class TravelSystem : MonoBehaviour
 
     public void locationOnePress()
     {
+        buttonLocation = 0; //this will randomize the travel button locations again
         currentLocation = nextLocation;
+        thisGameSystem.correctTravels++;
         thisExploreSystem.resetExplore();
 
         //clear the location dots

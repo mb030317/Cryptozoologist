@@ -6,12 +6,18 @@ using UnityEngine.UI;
 
 public class GameSystem : MonoBehaviour
 {
-    public TextMeshProUGUI gameText;
     public string startingLocation;
 
+    //other scripts
     TravelSystem thisTravelSystem;
 
+    //text objects
     public string mainScreenText;
+    public TextMeshProUGUI gameText;
+
+    //gameplay ints
+    public int correctTravels = 0;
+    public int money = 100;
 
     // Start is called before the first frame update
     void Start()

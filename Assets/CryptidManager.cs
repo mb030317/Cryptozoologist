@@ -8,19 +8,33 @@ public class CryptidManager : MonoBehaviour
     public string[] mothman;
     public string[] bigfoot;
     public string[] nessie;
+    public string[] nightcrawler;
+    public string[] frogman;
 
     public string[] cryptid; //this is the list of cryptids
     public string thisCryptid;
 
+    AdvancementManager thisAdvancementManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        thisCryptid = cryptid[Random.Range(0, 3)]; //this randomly assigns this round's cryptid        
-    }
+        thisAdvancementManager = GameObject.Find("AdvancementManager").GetComponent<AdvancementManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (thisAdvancementManager.successfulHunts)
+        {
+            case 0:
+                thisCryptid = cryptid[Random.Range(0, 3)]; //this randomly assigns this round's cryptid
+                break;
+            case 1:
+                thisCryptid = cryptid[Random.Range(0, 4)]; //increases the cryptid pool with successfulHunts (Adds Nightcrawlers)
+                break;
+            case 2:
+                thisCryptid = cryptid[Random.Range(0, 5)]; //increases the cryptid pool with successfulHunts (Adds Frogman)
+                break;
+            default:
+                break;
+        }
+               
     }
 }

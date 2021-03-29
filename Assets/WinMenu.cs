@@ -6,7 +6,7 @@ using TMPro;
 
 public class WinMenu : MonoBehaviour
 {
-    public Sprite[] cryptids; //0 Bigfoot, 1 Mothman, 2 Nessie
+    public Sprite[] cryptids; //0 Bigfoot, 1 Mothman, 2 Nessie, 3 The Nightcrawlers, 4 Frogman
     public Image cryptidPhoto; 
 
     public TextMeshProUGUI winText;
@@ -19,20 +19,25 @@ public class WinMenu : MonoBehaviour
         switch (thisCryptidManager.thisCryptid)
         {
             case "Mothman":
-                winText.text = "Congratulations! You've discovered " + thisCryptidManager.thisCryptid + "! Nice photo...";
                 cryptidPhoto.sprite = cryptids[1];
                 break;
             case "Bigfoot":
-                winText.text = "Congratulations! You've discovered " + thisCryptidManager.thisCryptid + "! Nice photo...";
                 cryptidPhoto.sprite = cryptids[0];
                 break;
             case "Nessie":
-                winText.text = "Congratulations! You've discovered " + thisCryptidManager.thisCryptid + "! Nice photo...";
                 cryptidPhoto.sprite = cryptids[2];
+                break;
+            case "The Nightcrawlers":
+                cryptidPhoto.sprite = cryptids[3];
+                break;
+            case "Frogman":
+                cryptidPhoto.sprite = cryptids[4];
                 break;
             default:
                 break;
         }
-        
+
+        winText.text = "Congratulations! You've discovered " + thisCryptidManager.thisCryptid + "! Nice photo...";
+
     }
 }

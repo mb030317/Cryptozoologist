@@ -3555,10 +3555,22 @@ MonoBehaviour:
   - fins
   - rubbery
   - nobody
+  nightcrawler:
+  - The Nightcrawlers
+  - legs
+  - ghostly
+  - nobody
+  frogman:
+  - Frogman
+  - legs
+  - rubbery
+  - police
   cryptid:
   - Mothman
   - Bigfoot
   - Nessie
+  - The Nightcrawlers
+  - Frogman
   thisCryptid: 
 --- !u!114 &901081949
 MonoBehaviour:
@@ -5361,6 +5373,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5aaa4f08b7b002d488159c23fddb85ae, type: 3}
   - {fileID: 21300000, guid: 90fd5436a20c8054c977857c865705c3, type: 3}
   - {fileID: 21300000, guid: b589deccbd487c943818e6cdd58a5757, type: 3}
+  - {fileID: 21300000, guid: d34666eca0463e04f8fe737375e67305, type: 3}
+  - {fileID: 21300000, guid: d449f030424db6c45a97b8c4de3b73e4, type: 3}
   cryptidPhoto: {fileID: 332112858}
   winText: {fileID: 735701120}
   thisGameSystem: {fileID: 901081952}

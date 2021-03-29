@@ -12,6 +12,7 @@ public class GameSystem : MonoBehaviour
 
     //other scripts
     TravelSystem thisTravelSystem;
+    AdvancementManager thisAdvancementManager;
 
     //text objects
     public string mainScreenText;
@@ -31,6 +32,7 @@ public class GameSystem : MonoBehaviour
     void Start()
     {
         thisTravelSystem = GetComponent<TravelSystem>();
+        thisAdvancementManager = GameObject.Find("AdvancementManager").GetComponent<AdvancementManager>(); //grabs the advancementManager
 
         money = 125;
 
@@ -87,6 +89,11 @@ public class GameSystem : MonoBehaviour
 
     public void restartGame() //restarts the scene
     {
+        if (winMenu.activeSelf == true && thisAdvancementManager.successfulHunts < 2) //adds a successful hunt if the player plays again after winning
+        {
+            thisAdvancementManager.successfulHunts++;
+        }
+
         SceneManager.LoadScene("SampleScene");
     }
 

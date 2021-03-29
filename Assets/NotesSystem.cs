@@ -76,7 +76,7 @@ public class NotesSystem : MonoBehaviour
 
     public void looksPress()
     {
-        if(looksInt < 3)
+        if(looksInt < 4)
         {
             looksInt++;
         }
@@ -100,6 +100,9 @@ public class NotesSystem : MonoBehaviour
             case 3:
                 looksText.text = "Looks: Rubbery";
                 break;
+            case 4:
+                looksText.text = "Looks: Ghostly";
+                break;
             default:
                 break;
         }
@@ -107,7 +110,7 @@ public class NotesSystem : MonoBehaviour
 
     public void attackingPress()
     {
-        if(attackingInt < 3)
+        if(attackingInt < 4)
         {
             attackingInt++;
         }
@@ -130,6 +133,9 @@ public class NotesSystem : MonoBehaviour
                 break;
             case 3:
                 attackingText.text = "Attacking: Nobody";
+                break;
+            case 4:
+                attackingText.text = "Attacking: Police";
                 break;
             default:
                 break;
@@ -179,6 +185,36 @@ public class NotesSystem : MonoBehaviour
             cryptidText.text = "Cryptid: Nessie";
 
             if(thisCryptidManager.thisCryptid == "Nessie")
+            {
+                thisGameSystem.discoveredCryptid = true;
+            }
+
+            else
+            {
+                thisGameSystem.discoveredCryptid = false;
+            }
+        }
+
+        else if(movementInt == 2 && looksInt == 4 && attackingInt == 3)
+        {
+            cryptidText.text = "Cryptid: The Nightcrawlers";
+
+            if (thisCryptidManager.thisCryptid == "The Nightcrawlers")
+            {
+                thisGameSystem.discoveredCryptid = true;
+            }
+
+            else
+            {
+                thisGameSystem.discoveredCryptid = false;
+            }
+        }
+
+        else if(movementInt == 2 && looksInt == 3 && attackingInt == 4)
+        {
+            cryptidText.text = "Cryptid: Frogman";
+
+            if (thisCryptidManager.thisCryptid == "Frogman")
             {
                 thisGameSystem.discoveredCryptid = true;
             }

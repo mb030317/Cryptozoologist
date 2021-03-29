@@ -43,6 +43,12 @@ public class ExploreSystem : MonoBehaviour
             case "Nessie":
                 thisCryptid = thisCryptidManager.nessie;
                 break;
+            case "The Nightcrawlers":
+                thisCryptid = thisCryptidManager.nightcrawler;
+                break;
+            case "Frogman":
+                thisCryptid = thisCryptidManager.frogman;
+                break;
             default:
                 break;
         }
